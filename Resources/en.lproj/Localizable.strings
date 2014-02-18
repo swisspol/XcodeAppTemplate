@@ -1,0 +1,15 @@
+"ALERT_UNAVAILABLE_TITLE" = "In-App Purchases not available!";
+"ALERT_UNAVAILABLE_DEFAULT_BUTTON" = "OK";
+"ALERT_UNAVAILABLE_MESSAGE" = "Make sure your computer is connected to the Internet and App Store users are allowed to make payments.";
+
+"ALERT_PURCHASE_TITLE" = "<?> feature successfully purchased!";
+"ALERT_PURCHASE_DEFAULT_BUTTON" = "Done";
+"ALERT_PURCHASE_MESSAGE" = "Your can now <?>. Thanks for supporting the development of <?>!";
+
+"ALERT_RESTORE_TITLE" = "<?> feature successfully restored!";
+"ALERT_RESTORE_DEFAULT_BUTTON" = "Done";
+"ALERT_RESTORE_MESSAGE" = "Your can now <?>. Thanks for supporting the development of <?>!";
+
+"ALERT_IAP_FAILED_TITLE" = "In-App Purchase error!";
+"ALERT_IAP_FAILED_BUTTON" = "OK";
+"ALERT_IAP_FAILED_MESSAGE" = "There was a problem communicating with the App Store. Please try again later.\n\n%@";
