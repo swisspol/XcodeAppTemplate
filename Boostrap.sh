@@ -45,4 +45,5 @@ rm -rf "xcuserdata"
 popd
 mv "XcodeAppTemplate.xcodeproj" "$PROJECT_NAME.xcodeproj"
 
+rm -f "$0"
 echo "Done!"
