@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		8D1107320486CEB800E47090 /* XcodeAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Xcode App Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcode App Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22CE76A18A49ACB008A0C72 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		E22CE76B18A49AEA008A0C72 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E279087618AF410C00B752E1 /* InAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppStore.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* XcodeAppTemplate.app */,
+				8D1107320486CEB800E47090 /* Xcode App Template.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			name = XcodeAppTemplate;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Mac;
-			productReference = 8D1107320486CEB800E47090 /* XcodeAppTemplate.app */;
+			productReference = 8D1107320486CEB800E47090 /* Xcode App Template.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -289,7 +289,7 @@
 					"-framework",
 					Crashlytics,
 				);
-				PRODUCT_NAME = XcodeAppTemplate;
+				PRODUCT_NAME = "Xcode App Template";
 			};
 			name = Debug;
 		};
@@ -313,7 +313,7 @@
 					"-framework",
 					Crashlytics,
 				);
-				PRODUCT_NAME = XcodeAppTemplate;
+				PRODUCT_NAME = "Xcode App Template";
 			};
 			name = Release;
 		};
