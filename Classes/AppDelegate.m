@@ -18,7 +18,6 @@
 #import "AppDelegate.h"
 #import "MixpanelTracker.h"
 
-#define kUserDefaultKey_ChecksumFiles @"checksumFiles"
 #define kUserDefaultKey_ProductPrice @"productPrice"
 
 #define kInAppProductIdentifier @"template_product"
