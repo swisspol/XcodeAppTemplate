@@ -33,6 +33,7 @@ rm -rf "project.xcworkspace"
 rm -rf "xcshareddata"
 rm -rf "xcuserdata"
 popd
+rm -rf "$PROJECT_NAME.xcodeproj"
 mv "XcodeAppTemplate.xcodeproj" "$PROJECT_NAME.xcodeproj"
 
 rm -f "$0"
