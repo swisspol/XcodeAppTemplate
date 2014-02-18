@@ -22,6 +22,8 @@ if [ "$yn" != "y" ]; then
 fi
 set -x
 
+patch_file "README.md" "s/Xcode App Template/$PRODUCT_NAME/g;s/XcodeAppTemplate/$PROJECT_NAME/g"
+
 pushd "Resources/en.lproj"
 patch_file "Localizable.strings" "s/Xcode App Template/$PRODUCT_NAME/g"
 patch_file "MainMenu.xib" "s/Xcode App Template/$PRODUCT_NAME/g"
