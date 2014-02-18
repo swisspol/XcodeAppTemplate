@@ -229,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ]; then\n  echo \"Skipping Crashlytics in Debug configuration\"\nelse\n  ./Crashlytics.framework/run \"936a419a4a141683e2eb17db02a13b72ee02b362\" \"914e112a501318b6a55d3214bae28bdb52e7e0cc8ed727ec0917fe9cc61c70fd\"\nfi\n";
+			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ]; then\n  echo \"Skipping Crashlytics in Debug configuration\"\nelse\n  exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

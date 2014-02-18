@@ -27,26 +27,22 @@
 
 + (void)initialize {
   NSDictionary* defaults = @{
-                             // TODO
+                             // FIXME
                              };
   [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
-- (void)awakeFromNib {
-  ; // TODO
-}
-
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
 #ifdef NDEBUG
-//  [Crashlytics startWithAPIKey:@""];  // TODO
+  [Crashlytics startWithAPIKey:@""];  // FIXME
 #endif
   
   [[InAppStore sharedStore] setDelegate:self];
   
 #ifdef NDEBUG
-//  [MixpanelTracker startWithToken:@""];  // TODO
+  [MixpanelTracker startWithToken:@""];  // FIXME
 #else
-//  [MixpanelTracker startWithToken:@""];  // TODO
+  [MixpanelTracker startWithToken:@""];  // FIXME
 #endif
   
   [_mainWindow makeKeyAndOrderFront:nil];
