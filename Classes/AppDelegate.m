@@ -17,6 +17,7 @@
 
 #import "AppDelegate.h"
 #import "MixpanelTracker.h"
+#import "XLFacilityMacros.h"
 
 #define kUserDefaultKey_ProductPrice @"productPrice"
 

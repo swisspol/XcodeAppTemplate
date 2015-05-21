@@ -10,6 +10,14 @@
 		E200E17F158C1FD90078EAF8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E22CE76C18A49AEA008A0C72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22CE76B18A49AEA008A0C72 /* StoreKit.framework */; };
 		E23183021B0E3B8800A93CCF /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23183011B0E3B8800A93CCF /* Media.xcassets */; };
+		E23183281B0E3F2400A93CCF /* XLASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E23183061B0E3F2400A93CCF /* XLASLLogger.m */; };
+		E23183291B0E3F2400A93CCF /* XLCallbackLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E23183081B0E3F2400A93CCF /* XLCallbackLogger.m */; };
+		E231832A1B0E3F2400A93CCF /* XLFacility.m in Sources */ = {isa = PBXBuildFile; fileRef = E231830A1B0E3F2400A93CCF /* XLFacility.m */; };
+		E231832B1B0E3F2400A93CCF /* XLFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E231830F1B0E3F2400A93CCF /* XLFileLogger.m */; };
+		E231832C1B0E3F2400A93CCF /* XLFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E23183111B0E3F2400A93CCF /* XLFunctions.m */; };
+		E231832D1B0E3F2400A93CCF /* XLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E23183131B0E3F2400A93CCF /* XLLogger.m */; };
+		E231832E1B0E3F2400A93CCF /* XLLogRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E23183151B0E3F2400A93CCF /* XLLogRecord.m */; };
+		E231832F1B0E3F2400A93CCF /* XLStandardLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E23183171B0E3F2400A93CCF /* XLStandardLogger.m */; };
 		E279087918AF410C00B752E1 /* InAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E279087718AF410C00B752E1 /* InAppStore.m */; };
 		E279087A18AF410C00B752E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E279087818AF410C00B752E1 /* main.m */; };
 		E279087C18AF41AA00B752E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E279087B18AF41AA00B752E1 /* Security.framework */; };
@@ -28,6 +36,25 @@
 		E22CE76A18A49ACB008A0C72 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		E22CE76B18A49AEA008A0C72 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E23183011B0E3B8800A93CCF /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		E23183051B0E3F2400A93CCF /* XLASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLASLLogger.h; sourceTree = "<group>"; };
+		E23183061B0E3F2400A93CCF /* XLASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLASLLogger.m; sourceTree = "<group>"; };
+		E23183071B0E3F2400A93CCF /* XLCallbackLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCallbackLogger.h; sourceTree = "<group>"; };
+		E23183081B0E3F2400A93CCF /* XLCallbackLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCallbackLogger.m; sourceTree = "<group>"; };
+		E23183091B0E3F2400A93CCF /* XLFacility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFacility.h; sourceTree = "<group>"; };
+		E231830A1B0E3F2400A93CCF /* XLFacility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFacility.m; sourceTree = "<group>"; };
+		E231830B1B0E3F2400A93CCF /* XLFacilityCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFacilityCMacros.h; sourceTree = "<group>"; };
+		E231830C1B0E3F2400A93CCF /* XLFacilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFacilityMacros.h; sourceTree = "<group>"; };
+		E231830D1B0E3F2400A93CCF /* XLFacilityPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFacilityPrivate.h; sourceTree = "<group>"; };
+		E231830E1B0E3F2400A93CCF /* XLFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFileLogger.h; sourceTree = "<group>"; };
+		E231830F1B0E3F2400A93CCF /* XLFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFileLogger.m; sourceTree = "<group>"; };
+		E23183101B0E3F2400A93CCF /* XLFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFunctions.h; sourceTree = "<group>"; };
+		E23183111B0E3F2400A93CCF /* XLFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFunctions.m; sourceTree = "<group>"; };
+		E23183121B0E3F2400A93CCF /* XLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLLogger.h; sourceTree = "<group>"; };
+		E23183131B0E3F2400A93CCF /* XLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLLogger.m; sourceTree = "<group>"; };
+		E23183141B0E3F2400A93CCF /* XLLogRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLLogRecord.h; sourceTree = "<group>"; };
+		E23183151B0E3F2400A93CCF /* XLLogRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLLogRecord.m; sourceTree = "<group>"; };
+		E23183161B0E3F2400A93CCF /* XLStandardLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLStandardLogger.h; sourceTree = "<group>"; };
+		E23183171B0E3F2400A93CCF /* XLStandardLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLStandardLogger.m; sourceTree = "<group>"; };
 		E279087618AF410C00B752E1 /* InAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppStore.h; sourceTree = "<group>"; };
 		E279087718AF410C00B752E1 /* InAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppStore.m; sourceTree = "<group>"; };
 		E279087818AF410C00B752E1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +104,7 @@
 				E2E12C701343C96000B48700 /* Classes */,
 				E279087518AF410C00B752E1 /* InAppStore */,
 				E2C2446918B154B0003682FB /* MixpanelTracker */,
+				E23183031B0E3F2400A93CCF /* XLFacility */,
 				E2E12D011343CDCD00B48700 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks and Libraries */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -94,6 +122,41 @@
 				E279087D18AF41AF00B752E1 /* IOKit.framework */,
 			);
 			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		E23183031B0E3F2400A93CCF /* XLFacility */ = {
+			isa = PBXGroup;
+			children = (
+				E23183041B0E3F2400A93CCF /* Core */,
+			);
+			name = XLFacility;
+			path = XLFacility/XLFacility;
+			sourceTree = "<group>";
+		};
+		E23183041B0E3F2400A93CCF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E23183051B0E3F2400A93CCF /* XLASLLogger.h */,
+				E23183061B0E3F2400A93CCF /* XLASLLogger.m */,
+				E23183071B0E3F2400A93CCF /* XLCallbackLogger.h */,
+				E23183081B0E3F2400A93CCF /* XLCallbackLogger.m */,
+				E23183091B0E3F2400A93CCF /* XLFacility.h */,
+				E231830A1B0E3F2400A93CCF /* XLFacility.m */,
+				E231830B1B0E3F2400A93CCF /* XLFacilityCMacros.h */,
+				E231830C1B0E3F2400A93CCF /* XLFacilityMacros.h */,
+				E231830D1B0E3F2400A93CCF /* XLFacilityPrivate.h */,
+				E231830E1B0E3F2400A93CCF /* XLFileLogger.h */,
+				E231830F1B0E3F2400A93CCF /* XLFileLogger.m */,
+				E23183101B0E3F2400A93CCF /* XLFunctions.h */,
+				E23183111B0E3F2400A93CCF /* XLFunctions.m */,
+				E23183121B0E3F2400A93CCF /* XLLogger.h */,
+				E23183131B0E3F2400A93CCF /* XLLogger.m */,
+				E23183141B0E3F2400A93CCF /* XLLogRecord.h */,
+				E23183151B0E3F2400A93CCF /* XLLogRecord.m */,
+				E23183161B0E3F2400A93CCF /* XLStandardLogger.h */,
+				E23183171B0E3F2400A93CCF /* XLStandardLogger.m */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		E279087518AF410C00B752E1 /* InAppStore */ = {
@@ -237,11 +300,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E231832A1B0E3F2400A93CCF /* XLFacility.m in Sources */,
 				E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */,
+				E231832D1B0E3F2400A93CCF /* XLLogger.m in Sources */,
 				E2E12C731343C96000B48700 /* AppDelegate.m in Sources */,
 				E2C2446E18B154B0003682FB /* Base64.c in Sources */,
 				E279087A18AF410C00B752E1 /* main.m in Sources */,
+				E231832C1B0E3F2400A93CCF /* XLFunctions.m in Sources */,
+				E23183291B0E3F2400A93CCF /* XLCallbackLogger.m in Sources */,
+				E231832F1B0E3F2400A93CCF /* XLStandardLogger.m in Sources */,
+				E23183281B0E3F2400A93CCF /* XLASLLogger.m in Sources */,
+				E231832E1B0E3F2400A93CCF /* XLLogRecord.m in Sources */,
 				E279087918AF410C00B752E1 /* InAppStore.m in Sources */,
+				E231832B1B0E3F2400A93CCF /* XLFileLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
