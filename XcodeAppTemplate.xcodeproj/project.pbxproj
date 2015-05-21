@@ -290,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ]; then\n  echo \"Skipping Crashlytics in Debug configuration\"\nelse\n  exit 1\nfi\n";
+			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ]; then\n  echo \"Skipping Crashlytics in Debug configuration\"\nelif [ \"$RUN_CLANG_STATIC_ANALYZER\" != \"\" ]; then\n  echo \"Skipping Crashlytics for Clang Static Analyzer\"\nelse\n  ./Crashlytics.framework/run FIXME FIXME\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
