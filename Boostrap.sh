@@ -38,5 +38,6 @@ popd
 rm -rf "$PROJECT_NAME.xcodeproj"
 mv "XcodeAppTemplate.xcodeproj" "$PROJECT_NAME.xcodeproj"
 
+rm -rf ".git"
 rm -f "$0"
 echo "Done!"
