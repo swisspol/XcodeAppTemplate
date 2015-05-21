@@ -16,21 +16,19 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleVersion</key>
-	<string>${BUNDLE_VERSION}</string>
 	<key>CFBundleShortVersionString</key>
 	<string>${BUNDLE_VERSION_STRING}</string>
+	<key>CFBundleVersion</key>
+	<string>${BUNDLE_VERSION}</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2014 Pol-Online. All Rights Reserved.</string>
-	<key>CFBundleIconFile</key>
-	<string>Icon</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.utilities</string>
 </dict>
 </plist>
