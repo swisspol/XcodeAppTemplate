@@ -16,12 +16,16 @@
 #import <Crashlytics/Crashlytics.h>
 
 #import "AppDelegate.h"
+#import "InAppStore.h"
 #import "MixpanelTracker.h"
 #import "XLFacilityMacros.h"
 
 #define kUserDefaultKey_ProductPrice @"productPrice"
 
-#define kInAppProductIdentifier @"template_product"
+#define kInAppProductIdentifier @"template_product"  // FIXME
+
+@interface AppDelegate () <InAppStoreDelegate, CrashlyticsDelegate>
+@end
 
 @implementation AppDelegate
 
@@ -35,12 +39,16 @@
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
 #if !DEBUG
   [Crashlytics startWithAPIKey:@""];  // FIXME
+  [[Crashlytics sharedInstance] setDelegate:self];
 #endif
   
   [[InAppStore sharedStore] setDelegate:self];
   
 #if DEBUG
   [MixpanelTracker startWithToken:@""];  // FIXME
+  if ([XLSharedFacility minLogLevel] == kXLLogLevel_Debug) {
+    [[MixpanelTracker sharedTracker] setVerboseLoggingEnabled:YES];
+  }
 #else
   [MixpanelTracker startWithToken:@""];  // FIXME
 #endif
@@ -55,17 +63,41 @@
   return NSTerminateNow;
 }
 
-- (BOOL)windowShouldClose:(id)sender {
-  [NSApp terminate:nil];
-  return NO;
-}
-
 - (BOOL)validateMenuItem:(NSMenuItem*)menuItem {
   if ((menuItem.action == @selector(purchaseFeature:)) || (menuItem.action == @selector(restorePurchases:))) {
     return ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier] && ![[InAppStore sharedStore] isPurchasing] && ![[InAppStore sharedStore] isRestoring];
   }
   return YES;
 }
+
+#pragma mark - Actions
+
+- (IBAction)purchaseFeature:(id)sender {
+  if ([[InAppStore sharedStore] purchaseProductWithIdentifier:kInAppProductIdentifier]) {
+    MIXPANEL_TRACK_EVENT(@"Start Purchase", nil);
+  } else {
+    NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_UNAVAILABLE_TITLE", nil)
+                                     defaultButton:NSLocalizedString(@"ALERT_UNAVAILABLE_DEFAULT_BUTTON", nil)
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:NSLocalizedString(@"ALERT_UNAVAILABLE_MESSAGE", nil)];
+    [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  }
+}
+
+- (IBAction)restorePurchases:(id)sender {
+  MIXPANEL_TRACK_EVENT(@"Restore Purchase", nil);
+  [[InAppStore sharedStore] restorePurchases];
+}
+
+#pragma mark - NSWindowDelegate
+
+- (BOOL)windowShouldClose:(id)sender {
+  [NSApp terminate:nil];
+  return NO;
+}
+
+#pragma mark - InAppStoreDelegate
 
 - (void)inAppStore:(InAppStore*)store didFindProductWithIdentifier:(NSString*)identifier price:(NSDecimalNumber*)price currencyLocale:(NSLocale*)locale {
   [[NSUserDefaults standardUserDefaults] setObject:price forKey:kUserDefaultKey_ProductPrice];
@@ -130,29 +162,10 @@
   [self _reportIAPError:error];
 }
 
-- (IBAction)purchaseFeature:(id)sender {
-  if ([[InAppStore sharedStore] purchaseProductWithIdentifier:kInAppProductIdentifier]) {
-    MIXPANEL_TRACK_EVENT(@"Start Purchase", nil);
-  } else {
-    NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_UNAVAILABLE_TITLE", nil)
-                                     defaultButton:NSLocalizedString(@"ALERT_UNAVAILABLE_DEFAULT_BUTTON", nil)
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:NSLocalizedString(@"ALERT_UNAVAILABLE_MESSAGE", nil)];
-    [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
-  }
-}
+#pragma mark - CrashlyticsDelegate
 
-- (IBAction)restorePurchases:(id)sender {
-  MIXPANEL_TRACK_EVENT(@"Restore Purchase", nil);
-  [[InAppStore sharedStore] restorePurchases];
-}
-
-- (void)_purchaseAlertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
-  MIXPANEL_TRACK_EVENT(@"Learn Purchase", @{@"Choice": [NSNumber numberWithInteger:returnCode]});
-  if (returnCode == NSAlertDefaultReturn) {
-    [self purchaseFeature:nil];
-  }
+- (void)crashlytics:(Crashlytics*)crashlytics didDetectCrashDuringPreviousExecution:(id <CLSCrashReport>)crash {
+  XLOG_WARNING(@"Application crashed during previous execution on %@", crash.crashedOnDate);
 }
 
 @end

@@ -15,9 +15,7 @@
 
 #import <AppKit/AppKit.h>
 
-#import "InAppStore.h"
-
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate, InAppStoreDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 @property(nonatomic, assign) IBOutlet NSWindow* mainWindow;
 - (IBAction)purchaseFeature:(id)sender;
 - (IBAction)restorePurchases:(id)sender;
