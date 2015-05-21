@@ -38,6 +38,9 @@ popd
 rm -rf "$PROJECT_NAME.xcodeproj"
 mv "XcodeAppTemplate.xcodeproj" "$PROJECT_NAME.xcodeproj"
 
-rm -rf ".git"
+git remote rename origin template
+git branch -m template
+git checkout -b master
+
 rm -f "$0"
 echo "Done!"
