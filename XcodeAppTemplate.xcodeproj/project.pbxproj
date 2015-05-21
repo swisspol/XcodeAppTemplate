@@ -276,6 +276,7 @@
 				BUNDLE_VERSION_STRING = 1.0;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
 					"__BUNDLE_ID__=\\\"$(BUNDLE_ID)\\\"",
@@ -299,6 +300,7 @@
 				BUNDLE_VERSION_STRING = 1.0;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
 					"__BUNDLE_ID__=\\\"$(BUNDLE_ID)\\\"",
@@ -317,16 +319,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = c99;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-Wshadow",
+					"-Wshorten-64-to-32",
+					"-Wbool-conversion",
+					"-Wconstant-conversion",
+					"-Wundeclared-selector",
+					"-Wno-pedantic",
+					"-Wno-padded",
+					"-Wno-direct-ivar-access",
+					"-Wno-documentation-unknown-command",
+					"-Wno-objc-missing-property-synthesis",
+					"-Wno-implicit-retain-self",
+					"-Wno-explicit-ownership-type",
+					"-Wno-assign-enum",
+					"-Wno-cast-align",
+					"-Wno-switch-enum",
+					"-Wno-gnu-statement-expression",
+					"-Wno-cstring-format-directive",
+				);
 			};
 			name = Debug;
 		};
@@ -334,17 +363,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					NDEBUG,
-					NS_BLOCK_ASSERTIONS,
-				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = NS_BLOCK_ASSERTIONS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				LD_NO_PIE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 			};
