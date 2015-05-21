@@ -33,13 +33,13 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
-#ifdef NDEBUG
+#if !DEBUG
   [Crashlytics startWithAPIKey:@""];  // FIXME
 #endif
   
   [[InAppStore sharedStore] setDelegate:self];
   
-#ifdef NDEBUG
+#if DEBUG
   [MixpanelTracker startWithToken:@""];  // FIXME
 #else
   [MixpanelTracker startWithToken:@""];  // FIXME
