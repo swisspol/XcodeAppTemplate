@@ -41,7 +41,6 @@
 		E2C2446C18B154B0003682FB /* MixpanelTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixpanelTracker.h; sourceTree = "<group>"; };
 		E2C2446D18B154B0003682FB /* MixpanelTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixpanelTracker.m; sourceTree = "<group>"; };
 		E2D09A4E1343C4B60096A4CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2D09A531343C4D90096A4CC /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		E2E12C711343C96000B48700 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2E12C721343C96000B48700 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				E22CE76A18A49ACB008A0C72 /* Entitlements.entitlements */,
-				E2D09A531343C4D90096A4CC /* Prefix.pch */,
 				E2D09A4E1343C4B60096A4CC /* Info.plist */,
 				E2E12C701343C96000B48700 /* Classes */,
 				E279087518AF410C00B752E1 /* InAppStore */,
@@ -279,8 +277,6 @@
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
 					"__BUNDLE_ID__=\\\"$(BUNDLE_ID)\\\"",
 					"__BUNDLE_VERSION__=\\\"$(BUNDLE_VERSION_STRING)\\\"",
@@ -304,8 +300,6 @@
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
 					"__BUNDLE_ID__=\\\"$(BUNDLE_ID)\\\"",
 					"__BUNDLE_VERSION__=\\\"$(BUNDLE_VERSION_STRING)\\\"",
